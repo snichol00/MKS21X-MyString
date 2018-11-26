@@ -24,6 +24,9 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   // implements like substring
   public String subSequence(int start, int end){
     String output = "";
+    if (start < 0 || end > data.length){
+      throw new IndexOutOfBoundsException();
+    }
     for (; start < end; start++){
       output += data[start];
     }
@@ -32,7 +35,7 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
   // converts back to a string in order to return
   public String toString(){
-    
+
   }
 
   //returns 1 if the same, -1 otherwise? I don't really understand
