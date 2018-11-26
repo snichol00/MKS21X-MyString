@@ -42,8 +42,17 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
     return output;
   }
 
-  //returns 1 if the same, -1 otherwise? I don't really understand
+  //returns 0 if the same, 1 or -1 otherwise? I don't really understand
   public int compareTo(charSequence s){
+    for (int x = 0; x < data.length; x++){
+      if(this.charAt(x) > s.charAt(x)){
+        return 1;
+      }
 
+      if(this.charAt(x) < s.charAt(x)){
+        return -1;
+      }
+    }
+    return 0;
   }
 }
