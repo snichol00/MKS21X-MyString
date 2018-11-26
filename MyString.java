@@ -35,7 +35,11 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
   // converts back to a string in order to return
   public String toString(){
-
+    String output = "";
+    for (int x = 0; x < data.length; x++){
+      output += data[x];
+    }
+    return output;
   }
 
   //returns 1 if the same, -1 otherwise? I don't really understand
