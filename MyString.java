@@ -10,7 +10,10 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
   //returns char unless out of bounds
   public char charAt(int){
-
+    if (int < 0 || int >= data.length()){
+      throw new IndexOutOfBoundsException();
+    }
+    return data[int];
   }
 
   //finds length of string
@@ -30,6 +33,6 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
   //returns 1 if the same, -1 otherwise? I don't really understand
   public int compareTo(charSequence s){
-    
+
   }
 }
