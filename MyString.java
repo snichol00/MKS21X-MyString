@@ -9,11 +9,11 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   }
 
   //returns char unless out of bounds
-  public char charAt(int){
-    if (int < 0 || int >= data.length()){
+  public char charAt( int idx){
+    if (idx < 0 || idx >= data.length){
       throw new IndexOutOfBoundsException();
     }
-    return data[int];
+    return data[idx];
   }
 
   //finds length of string
@@ -24,7 +24,7 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   // implements like substring
   public String subSequence(int start, int end){
     String output = "";
-    if (start < 0 || end > data.length){
+    if (start < 0 || end > data.length || end < start){
       throw new IndexOutOfBoundsException();
     }
     for (; start < end; start++){
@@ -42,17 +42,17 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
     return output;
   }
 
-  //returns 0 if the same, 1 or -1 otherwise? I don't really understand
-  public int compareTo(charSequence s){
+  //returns 0 if the same, 1 if greater than s, -1 if less than
+  public int compareTo(CharSequence s){
     for (int x = 0; x < data.length; x++){
       if(this.charAt(x) > s.charAt(x)){
         return 1;
       }
-
       if(this.charAt(x) < s.charAt(x)){
         return -1;
       }
     }
     return 0;
+    //returns zero if s equals this
   }
 }
